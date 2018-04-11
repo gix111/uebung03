@@ -2,11 +2,11 @@ package ueb03;
 
 import java.util.NoSuchElementException;
 
-public class SetImpl implements Set {
+public class SetImpl<Z extends Comparable<Z>> implements Set<Z> {
 	class Element {
-		String val;
+		Z val;
 		Element left, right;
-		Element(String v, Element l, Element r) {
+		Element(Z v, Element l, Element r) {
 			val = v;
 			left = l;
 			right = r;
@@ -26,7 +26,7 @@ public class SetImpl implements Set {
 	Element root;
 
 	@Override
-	public boolean add(String s) {
+	public boolean add(Z s) {
 		return addElement(new Element(s, null, null));
 	}
 
@@ -63,7 +63,7 @@ public class SetImpl implements Set {
 	}
 
 	@Override
-	public boolean contains(String s) {
+	public boolean contains(Z s) {
 		if (root == null)
 			return false;
 
@@ -84,7 +84,7 @@ public class SetImpl implements Set {
 	}
 
 	@Override
-	public String remove(String s) {
+	public Z remove(Z s) {
 		if (root == null)
 			throw new NoSuchElementException();
 
@@ -108,7 +108,7 @@ public class SetImpl implements Set {
 		throw new NoSuchElementException();
 	}
 
-	private String removeRoot() {
+	private Z removeRoot() {
 		assert(root != null);
 
 		Element e = root;
@@ -136,7 +136,7 @@ public class SetImpl implements Set {
 	 * @param p Elternelement
 	 * @param e zu loeschendes Element
 	 */
-	private String removeElement(Element p, Element e) {
+	private Z removeElement(Element p, Element e) {
 		if (e == p.left) {
 			p.left = null;  // links abgestiegen
 		} else {

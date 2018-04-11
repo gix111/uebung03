@@ -5,7 +5,7 @@ public class Palindrom {
 		if (s.length() == 1)
 			return true;
 
-		Stack stack = new StackImpl();
+		Stack stack = new HansListe();
 		char[] cs = s.toLowerCase().replaceAll(" ", "").toCharArray();
 
 		// die erste Haelfte auf den Stack legen
