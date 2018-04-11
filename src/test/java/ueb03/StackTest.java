@@ -9,10 +9,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class StackTest {
 
-	
+
 	@Test
 	void testStackImpl() {
-		testStack(new HansListe<Character>());
+		testStack(new StackImpl<Character>());
 	}
 
 

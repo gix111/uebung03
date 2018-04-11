@@ -2,7 +2,7 @@ package ueb03;
 
 import java.util.NoSuchElementException;
 
-public class HansListe<T> implements Stack<T> {
+public class StackImpl<T> implements Stack<T> {
 	class Element {
 		T value;
 		Element next;
